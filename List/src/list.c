@@ -66,7 +66,6 @@ void SListPushBack(SListNode* *pphead, elementType x)
     {
         SListNode *newNode = CreateSlistNode(x);
         *pphead = newNode;
-        printf("phead: %p \n", *pphead);
     }
     else
     {
