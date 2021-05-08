@@ -14,6 +14,37 @@ SListNode* CreateSlistNode(elementType x)
         return newNode;
 }
 
+// 链表的初始化操作
+void SListInit(SListNode **pphead, int num_element, elementType x)
+{
+    if (*pphead == NULL)
+    {
+        int i=0;
+        SListNode *cur = *pphead;
+        for(i; i < num_element; i++)
+        {
+            if (i == 0)
+            {
+                SListNode *newNode = (SListNode*)malloc(sizeof(SListNode));
+                newNode = CreateSlistNode(x);
+                *pphead = newNode;
+                cur = *pphead;
+            }
+            else
+            {
+                SListNode *newNode = (SListNode*)malloc(sizeof(SListNode));
+                newNode = CreateSlistNode(x);
+                cur->next = newNode;
+                cur = cur->next;
+            }
+        }
+    }
+    else
+    {
+        printf("链表已经初始化过，无需再初始化");
+    }
+}
+
 // 打印整个链表
 void SListPrint(SListNode *phead)
 {

@@ -16,7 +16,7 @@ void SListPushBack(SListNode **pphead, elementType x);
 void SListPopBack(SListNode *phead);
 void SListPushFront(SListNode *phead, elementType x);
 void SListPopFront(SListNode *phead);
+void SListInit(SListNode **pphead, int num_element, elementType x);
 SListNode* CreateSlistNode(elementType x);
-
 void SListPrint(SListNode *phead);
 // # endif __LIST_H__

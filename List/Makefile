@@ -10,11 +10,11 @@ EXE = programa
 # la variable automática $@ referencia la regla o el resultado
 %.o: %.c
 	@echo "compilando $<..."
-	g++ -c $< -o $@
+	g++ -c -O0 -g $< -o $@
 
 $(EXE): $(OBJ_FILES)
 	@echo "linkeando $(EXE)..."
-	g++ $(OBJ_FILES) -o $(EXE)
+	g++ -O0 -g $(OBJ_FILES) -o $(EXE)
 
 #regla clean, no tiene dependencias, borra el ejecutable
 clean:
